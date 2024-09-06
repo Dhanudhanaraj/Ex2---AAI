@@ -57,24 +57,19 @@ network.add_cpds(cpd_burglary,cpd_earthquake,cpd_alarm,cpd_john_calls,cpd_mary_c
 
 inference = VariableElimination(network)
 
-
 #perform exact inference-------1
 
 evidence ={'JohnCalls':1,'MaryCalls':0} #john called(1) and mary didn't call (0) as evidence
 query_variable ='Burglary'
 result = inference.query(variables=[query_variable],evidence=evidence)
 
-
 #print result-----1
 print(result)
-
-
 
 #perform exact inference--------2
 evidence1 ={'JohnCalls':1,'MaryCalls':1} #john called(1) and mary called (1) as evidence
 query_variable ='Burglary'
 result2 = inference.query(variables=[query_variable],evidence=evidence)
-
 
 #print result-----2
 print(result2)
